@@ -9,6 +9,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>GENEROS</title>
         <link href="{% static 'css/magia.css' %}" rel="stylesheet">
+        <link href="{% static 'aos-master/dist/aos.css' %}" rel="stylesheet">
 
         <!-- django CMS -->
         {% render_block "css" %}
@@ -23,16 +24,15 @@
 
         <!-- Navigation -->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-
         <header >
-            LOGOIEDES
+            <a href="index.html"><img class="iedes-logo" src="{% static 'resources/logo.svg' %}" alt="iedes-logo"></a> 
             <a href="#nav"><i class="fa fa-bars fa-2x hamburger"></i></a>
             
     </header>
     <nav id="nav" class="nav">
         <a href="#close-nav" class="close"><i class="fas fa-times"></i></a>
         <ul>
-            <li>AL FIN VIEJAAA</li>
+            
             <li><a href="tags.html" ></i>HISTORIAS</a></li>
             
             <li><a href="tags.html"></i>DIVERSIDAD</a></li>
@@ -43,10 +43,10 @@
 
     <div class="articulo-destacado heteronormatividad is-full-size  background-full-screen">
         <a href="heteronormatividad.html">
-        <p class="articulo-destacado-titulo">HETERONORMATIVIDAD</p>
-        <p class="articulo-destacado-titulo">HETERONORMATIVIDAD</p>
-        <p class="articulo-destacado-titulo">HETERONORMATIVIDAD</p>
-        <p class="articulo-destacado-titulo">QUELOQUEDECIIIIII</p>
+        <p class="articulo-destacado-titulo text-shadow-pop-top">HETERONORMATIVIDAD</p>
+        <p class="articulo-destacado-titulo text-shadow-pop-top">HETERONORMATIVIDAD</p>
+        <p class="articulo-destacado-titulo text-shadow-pop-top">HETERONORMATIVIDAD</p>
+        <p class="articulo-destacado-titulo text-shadow-pop-top">QUELOQUEDECIIIIII</p>
         </a>
             
         
@@ -54,18 +54,21 @@
 
         <section class="article">
             <article>
-            	<div class="title-article">
-                	{% block title %}{% render_model request.current_page "page_title" %}{% endblock title %}
-                </div>
-                <div class="container-grid">
+                <h1 class="title-article " data-aos="fade-up">{% block title %}{% render_model request.current_page "page_title" %}{% endblock title %} </h1>
+               
+                <div class="container-grid-article">
                     <div class="column1">
                         <h2 class="autor">Por #autor</h2>
                     </div>
-                    <div class="parrafo">
-	                    {% block content %}
-	                        {% placeholder "content" %}
-	                    {% endblock content %}
-	                </div>
+    
+                    <div class="column2">
+                        <p class="parrafo first-letter"> 
+                            {% block content %}
+                            {% placeholder "content" %}
+                        {% endblock content %}
+                        </p>
+                        <div class="break"></div>
+                    </div>
                 </div>
             </article>
         </section>
@@ -74,7 +77,8 @@
                 <p>EL FOOTER</p>
             </footer>
         </secction>
-
+        <script src="{% static 'aos-master/dist/aos.js' %}"></script>
+    
         <!-- django CMS -->
         {% render_block "js" %}
 
@@ -83,5 +87,5 @@
     </body>
     <link href="https://fonts.googleapis.com/css?family=Merriweather:400,700|PT+Mono&display=swap" rel="stylesheet"> 
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-
+    <script>AOS.init();</script>
 </html>

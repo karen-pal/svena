@@ -170,7 +170,7 @@ CMS_TEMPLATES = (
     ('fullwidth.html', 'Fullwidth'),
     ('sidebar_left.html', 'Sidebar Left'),
     ('sidebar_right.html', 'Sidebar Right'),
-    ('heteronormatividad.html', 'Heteronormatividad')
+    ('article.html', 'Article')
 )
 
 CMS_PERMISSION = True

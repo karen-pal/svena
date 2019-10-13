@@ -1,18 +1,31 @@
+{% load cms_tags %}
+
+{% load staticfiles i18n cms_tags sekizai_tags menu_tags %}
 <!DOCTYPE html>
-<html>
+<html lang="es">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>GENEROS</title>
-        <link rel="stylesheet" href="css/magia.css">
-        <link rel="stylesheet" href="aos-master/dist/aos.css">
+        <link href="{% static 'css/magia.css' %}" rel="stylesheet">
+        <link href="{% static 'aos-master/dist/aos.css' %}" rel="stylesheet">
 
+        <!-- django CMS -->
+        {% render_block "css" %}
+
+        <!-- Divio Cloud -->
+        {{ ALDRYN_SNAKE.render_head }}
     </head>
 
     <body art>
+        <!-- django CMS Toolbar -->
+        {% cms_toolbar %}
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
         <header >
-            <a href="index.html"><img class="iedes-logo" src="resources/logo.svg" alt="iedes-logo"></a> 
+            <a href="index.html"><img class="iedes-logo" src="{% static 'resources/logo.svg' %}" alt="iedes-logo"></a> 
             <a href="#nav"><i class="fa fa-bars fa-2x hamburger"></i></a>
             
     </header>
@@ -41,7 +54,7 @@
 
         <section class="article">
             <article>
-                <h1 class="title-article " data-aos="fade-up">De qué hablamos cuando decimos HETERONORMATIVIDAD? </h1>
+                <h1 class="title-article " data-aos="fade-up">{% block title %}{% render_model request.current_page "page_title" %}{% endblock title %} </h1>
                
                 <div class="container-grid-article">
                     <div class="column1">
@@ -49,32 +62,12 @@
                     </div>
     
                     <div class="column2">
-                        <p class="parrafo first-letter"> La heteronormatividad expone que existe un complejo sistema que asume e impone (directa 
-                            e indirectamente) la heterosexualidad de todos los miembros de la sociedad.
-                            
-                           <p class="parrafo">Sin negar la responsabilidad (ética y penal) que cada individuo tiene sobre sus acciones, el 
-                            concepto de heteronormatividad permite entender que la vulneración de derechos que muchas 
-                            personas LGBT experimentan todos los días, no se debe sólo a actos personales de odio o burla, 
-                            sino a que se asume que la heterosexualidad, por ser más común, es también más deseable. 
-                            Es decir, se le asignan virtudes éticas y morales a la atracción emocional y física de la mayoría.</p> 
-                            <div class="break"></div>
-
-                            <p class="parrafo">La heteronormatividad es un sistema social e ideológico fundando en la creencia de que la 
-                            heterosexualidad es moral y éticamente superior a cualquier otra forma de sexualidad.
-                            </p>
-                            <div class="break"></div>
-
-                            <p class="parrafo">Asume que todas las personas son y deben ser heterosexuales y tilda de “problemáticos, 
-                            desviados o enfermos” a quienes no se identifican de esta manera. Por lo tanto, se estigmatiza, 
-                            denigra, margina y despoja de derechos a quienes no sean heterosexuales.
-                            </p>
-                            <div class="break"></div>
-
-                            <p class="parrafo">Así, pese a que dentro de la heteronormatividad haya un cierto margen para discursos 
-                            fundados en la “tolerancia”, la diversidad sexual no es vista como algo deseable y, en 
-                            consecuencia, es inconcebible trabajar conscientemente para construir una sociedad con más 
-                            personas de identidad y orientación sexual diversa.</p><div class="break"></div>
-
+                        <p class="parrafo first-letter"> 
+                            {% block content %}
+                            {% placeholder "content" %}
+                        {% endblock content %}
+                        </p>
+                        <div class="break"></div>
                     </div>
                 </div>
             </article>
@@ -84,7 +77,13 @@
                 <p>EL FOOTER</p>
             </footer>
         </secction>
-        <script src="aos-master/dist/aos.js"></script>
+        <script src="{% static 'aos-master/dist/aos.js' %}"></script>
+    
+        <!-- django CMS -->
+        {% render_block "js" %}
+
+        <!-- Divio Cloud -->
+        {{ ALDRYN_SNAKE.render_tail }}
     </body>
     <link href="https://fonts.googleapis.com/css?family=Merriweather:400,700|PT+Mono&display=swap" rel="stylesheet"> 
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>

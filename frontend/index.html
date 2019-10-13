@@ -1,3 +1,4 @@
+{% load staticfiles i18n cms_tags sekizai_tags menu_tags %}
 <!DOCTYPE html>
 <html>
     <head>
@@ -5,13 +6,25 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>GENEROS</title>
-        <link rel="stylesheet" href="css/magia.css">
-        <link rel="stylesheet" href="aos-master/dist/aos.css">
+
+        <link href="{% static 'css/magia.css' %}" rel="stylesheet" type="text/css">
+        <link  href="{% static 'aos-master/dist/aos.css' %" rel="stylesheet">
+        
+        <!-- django CMS -->
+        {% render_block "css" %}
+
+        <!-- Divio Cloud -->
+        {{ ALDRYN_SNAKE.render_head }} 
     </head>
 
     <body>
+        <!-- django CMS Toolbar -->
+        {% cms_toolbar %}
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
         <header >
-                <a href="index.html"><img class="iedes-logo" src="resources/logo.svg" alt="iedes-logo"></a> 
+                <a href="index.html"><img class="iedes-logo" src="{% static 'resources/logo.svg' %}" alt="iedes-logo"></a> 
                 <a href="#nav"><i class="fa fa-bars fa-2x hamburger"></i></a>
                 
         </header>
@@ -43,14 +56,14 @@
         <section class="historias-section is-full-size background-full-screen ">
             <a href="tags.html" class="no-a-decor historias-title"><p class=" home-title">HISTORIAS</p></a>
             <!-- <div class="historia-img background-full-screen" > </div> -->
-            <img class="historia-img"  data-aos="fade-right" src="resources/historias-ventana.svg" alt="" >
+            <img class="historia-img"  data-aos="fade-right" src="{% static 'resources/historias-ventana.svg' %}" alt="" >
         </section>
 
         <section class="diversidad-section is-full-size background-full-screen ">
                 <!-- <div class="diversidad-img "></div> -->
             <a href="tags.html" class="no-a-decor diversidad-title" data-aos="fade-left"><p class=" home-title"  >DIVERSIDAD</p></a>
 
-            <img class="diversidad-img"   src="resources/VICTOR-HUGO-ROBLES.jpg" alt="" >
+            <img class="diversidad-img"   src="{% static 'resources/VICTOR-HUGO-ROBLES.jpg' %}" alt="" >
 
             
         </section>
@@ -58,7 +71,7 @@
         <section class="feminismos-section is-full-size background-full-screen">
             <a href="tags.html" class="no-a-decor fem-title historias-title historias-title "><p class=" home-title">FEMINISMOS</p></a>
             <!-- <div class="femin-img background-full-screen"></div> -->
-            <img class="fem-img"  data-aos="fade-right" src="resources/mujeres-indolentes.svg" alt="mujeres indolentes">
+            <img class="fem-img"  data-aos="fade-right" src="{% static 'resources/mujeres-indolentes.svg' %}" alt="mujeres indolentes">
         </section>
 
         <section class="ultimos-articulos is-full-size background-full-screen">
@@ -85,12 +98,16 @@
                 <p>Yo y la monada</p>
             </footer>
         </div>
-    <script src="aos-master/dist/aos.js"></script>
-        
+    <script src="{% static 'aos-master/dist/aos.js' %}"></script>
+    <!-- django CMS -->
+    {% render_block "js" %}
+
+    <!-- Divio Cloud -->
+    {{ ALDRYN_SNAKE.render_tail }}     
     </body>
     <link href="https://fonts.googleapis.com/css?family=Merriweather:400,700|PT+Mono&display=swap" rel="stylesheet"> 
    
-    <script src="js/magia-oscura.js"></script>
+    <script src="{% static 'js/magia-oscura.js' %}"></script>
     <script>AOS.init();</script>
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 

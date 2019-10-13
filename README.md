@@ -1,4 +1,3 @@
-
 #Setup
 Para ejecutar el proyecto primero vamos a necesitar dos cosas:
 
@@ -11,11 +10,12 @@ Una vez instalado todo, vamos a crear un entorno virtual en nuestra carpeta de t
     $ source ./my-env/bin/activate
     (my-env) $
 
-Instalar en la virtenv:
+Instalar en la virtenv, dentro de la carpeta que tenga el archivo requirements.txt:
 	(my-env) $ pip install djangocms-installer
+	(my-env) $ pip install -r requirements.txt
 
 #Ejecutar
-Para correr, dentro de la carpeta mysite:
+Para correr, dentro de la carpeta que tenga manage.py:
 
 	(my-env) $ python3 manage.py runserver
 
