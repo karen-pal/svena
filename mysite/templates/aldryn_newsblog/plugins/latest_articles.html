@@ -1,0 +1,12 @@
+{% load i18n apphooks_config_tags %}
+
+{% for article in article_list %}
+    {% include "aldryn_newsblog/includes/article.html" with namespace=instance.app_config.namespace %}
+{% empty %}
+    <p>{% trans "No items available" %}</p>
+{% endfor %}
+
+<!-- Pager -->
+<div class="clearfix">
+  <a class="btn btn-primary float-right" href="{% namespace_url "article-list" namespace=instance.app_config.namespace default='' %}">Older Posts &rarr;</a>
+</div>

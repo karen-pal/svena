@@ -1,0 +1,46 @@
+{% load i18n staticfiles thumbnail cms_tags apphooks_config_tags %}
+<link rel="stylesheet" href="{% static '../../css/magia.css' %}">
+<article class="article-category
+    {% if article.is_featured %} featured{% endif %}
+    {% if not article.published %} unpublished{% endif %}">
+    
+    <section class="container-category" style="text-align: center;">
+
+        {% if not detail_view %}
+        <div >
+          <a class="no-a-decor" href="{% namespace_url 'article-detail' article.slug namespace=namespace default='' %}">
+            <h2 class="category-article-title to-uppercase" style="text-transform:uppercase">
+                {% render_model article "title" "" "" "striptags" %}
+            </h2>
+            {% if article.lead_in %}
+            <h3 class="category-article-subtitle to-uppercase" style="text-transform:uppercase">
+                {% if not detail_view %}
+                    {% render_model article "lead_in" "" "" "truncatewords:'20'|striptags" %}
+                {% else %}
+                    {% render_model article "lead_in" "" "" "striptags" %}
+                {% endif %}
+            </h3>
+            {% endif %}
+          </a>
+          {% include "aldryn_newsblog/includes/author.html" with author=article.author %}
+        </div>
+
+    </section>
+    
+    {% endif %}
+
+    {% if detail_view %}
+        <div class="article-container">
+            <div class="parrafo">
+                <h2 class="category-article-title to-uppercase" style="font-size: 60px">
+                    {% render_model article "title" "" "" "striptags" %}
+                    <!-- TODO: esto hay que hacerlo andar{% render_model article "category" %}-->
+                </h2>
+                {% render_placeholder article.content language placeholder_language %}
+                
+            </div>
+        </div>
+    {% endif %}
+</article>
+   <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+

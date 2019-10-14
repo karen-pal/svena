@@ -1,0 +1,44 @@
+{% extends "aldryn_newsblog/base.html" %}
+{% load i18n staticfiles thumbnail cms_tags apphooks_config_tags %}
+
+{% block title %}
+    {{ article.title }} - {{ block.super }}
+{% endblock %}
+
+{% block header %}
+<!-- Page Header -->
+<link href="{% static '../css/magia.css' %}" rel="stylesheet">
+<header class="masthead" style="background-image: url('{% if article.featured_image_id %}{% thumbnail article.featured_image 1200x400 crop subject_location=article.featured_image.subject_location %}{% else %}{% static 'img/post-bg.jpg' %}{% endif %}')">
+  <div class="overlay"></div>
+
+  <div class="container-category">
+    <div>
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div>
+          <h1 class="category-article-title ">{% render_model article "title" "" "" "striptags" %}</h1>
+          <h2 class="category-article-subtitle">{% render_model article "lead_in" "" "" "striptags" %}</h2>
+          {% include "aldryn_newsblog/includes/author.html" with author=article.author %}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</header>
+{% endblock %}
+
+{% block newsblog_content %}
+    {% include "aldryn_newsblog/includes/article.html" with detail_view="true" %}
+
+    {% static_placeholder "newsblog_social" %}
+
+    <ul class="pagination">
+        {% if prev_article %}
+            <li class="page-item"><a class="page-link" href="{{ prev_article.get_absolute_url }}">{% trans "<< Previous Article" %}</a></li>
+        {% endif %}
+        <li class="page-item"><a class="page-link" href="{% namespace_url "article-list" %}">{% trans "<< Back to Overview >>" %}</a></li>
+        {% if next_article %}
+            <li class="page-item"><a class="page-link" href="{{ next_article.get_absolute_url }}">{% trans "Next Article >>" %}</a></li>
+        {% endif %}
+    </ul>
+{% endblock %}
+

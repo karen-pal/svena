@@ -489,6 +489,7 @@ DIVERSIDADDDDDDDDDDDDDDDDDDDDDDDDDDDDD
     align-items: center;
     padding: 0 1rem;
     margin: auto 10vw;
+    text-align: center;
 }
 
 .article-category{
@@ -501,10 +502,12 @@ DIVERSIDADDDDDDDDDDDDDDDDDDDDDDDDDDDDD
 
 .category-article-title{
     font-size: 3vw;
+    
 }
 
 .category-article-subtitle{
     font-size: 1.5vw;
+    
 }
 
 .category-article-title:hover,
@@ -512,8 +515,12 @@ DIVERSIDADDDDDDDDDDDDDDDDDDDDDDDDDDDDD
     background-color: #fb6754;
     color: #04284a;
     transition: 0.5s;
+
 }
 
+.to-uppercase{
+    text-transform: uppercase;
+}
 /* ----------------------------
 -------ANIMACIONES----------
 ---------------------------- */

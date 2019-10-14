@@ -1,3 +1,7 @@
+{% load cms_tags %}
+
+{% load staticfiles i18n cms_tags sekizai_tags menu_tags %}
+
 <!DOCTYPE html>
 <html class="article">
     <head>
@@ -5,59 +9,58 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>GENEROS</title>
-        <link rel="stylesheet" href="css/magia.css">
-        <link rel="stylesheet" href="aos-master/dist/aos.css">
+        <link rel="stylesheet" href="{% static 'css/magia.css' %}">
+        <link rel="stylesheet" href="{% static 'aos-master/dist/aos.css' %}">
+        <!-- django CMS -->
+        {% render_block "css" %}
 
+        <!-- Divio Cloud -->
+        {{ ALDRYN_SNAKE.render_head }}
     </head>
 
     <body>
+        <!-- django CMS Toolbar -->
+        {% cms_toolbar %}
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+
         <header >
-            <a href="index.html"><img class="iedes-logo" src="resources/logo.svg" alt="iedes-logo"></a> 
-            <a href="#nav"><i class="fa fa-bars fa-2x hamburger"></i></a>
+            <a href="index.html"><img class="iedes-logo" src="{% static 'resources/logo.svg' %}" alt="iedes-logo"></a> 
+            <!---a href="#nav"><i class="fa fa-bars fa-2x hamburger"></i></a--->
             
         </header>
-        <nav id="nav" class="nav">
-            <a href="#close-nav" class="close"><i class="fas fa-times"></i></a>
-            <ul>
-                <li><a href="tags.html" ></i>HISTORIAS</a></li>
-                
-                <li><a href="tags.html"></i>DIVERSIDAD</a></li>
-                
-                <li><span class="fa fa-heart"></span><a href="tags.html">FEMINISMOS</a></li>
-            </ul>
-        </nav>
+        
         <h1 class="title-category text-pop-up-bottom">>ARTÍCULOS</h1>
 
         <section class="container-category">
            
-            <article class="article-category">
-                <a href="" class="no-a-decor">
-                        <h1 class="category-article-title">ESTO ES UN TITULO PROVOCATIVO SOBRE #CATEGORIA</h1>
-                        <h2 class="category-article-subtitle">YO SOY UN SUBTITULO QUE LE AGREGA CONTEXTO </h2>
-                </a>
+            <article>
                 
+                <a href="" class="no-a-decor">
+                    {% block content %}
+                        {% placeholder "content" %}
+                    {% endblock content %}
+                </a>
             </article>
         </section>
+                <!---
+                {% for i_art in articles %}
+                <a href="" class="no-a-decor">
+                        <h1 class="category-article-title">{{i_art.title}}</h1>
+                        <h2 class="category-article-subtitle">{{i_art.lead}} </h2>
+                </a>
+                {% endfor %}
+                <--->
 
-        <section class="container-category">
-                <div>IMAGEN</div>
-                <article class="article-category">
-                    
-                    <h1 class="category-article-title">ESTO ES UN TITULO PROVOCATIVO SOBRE #CATEGORIA</h1>
-                    <h2 class="category-article-subtitle">YO SOY UN SUBTITULO QUE LE AGREGA CONTEXTO </h2>
-                </article>
-            </section>
 
-            <section class="container-category">
-                    <div>IMAGEN</div>
-                    <article class="article-category">
-                        
-                        <h1 class="category-article-title">ESTO ES UN TITULO PROVOCATIVO SOBRE #CATEGORIA</h1>
-                        <h2 class="category-article-subtitle">YO SOY UN SUBTITULO QUE LE AGREGA CONTEXTO </h2>
-                    </article>
-                    </section>
 
-                    <script src="aos-master/dist/aos.js"></script>
+         <script src="{% static 'aos-master/dist/aos.js' %}"></script>
+        <!-- django CMS -->
+        {% render_block "js" %}
+
+        <!-- Divio Cloud -->
+        {{ ALDRYN_SNAKE.render_tail }}
     </body>
     <script>AOS.init();</script>
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>

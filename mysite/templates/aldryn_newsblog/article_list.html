@@ -1,0 +1,49 @@
+{% extends "aldryn_newsblog/base.html" %}
+{% load i18n %}
+
+<!---"aldryn_newsblog/base.html"><--->
+<!DOCTYPE html>
+<html class="article">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>GENEROS</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static '../css/magia.css' %}">
+        <link rel="stylesheet" href="{% static '../aos-master/dist/aos.css' %}">
+        
+    </head>
+
+    <body>
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+
+        <header >
+            <a href="index.html"><img class="iedes-logo" src="{% static 'resources/logo.svg' %}" alt="iedes-logo"></a> 
+            <!---a href="#nav"><i class="fa fa-bars fa-2x hamburger"></i></a--->
+            
+        </header>
+        
+        <h1 class="title-category text-pop-up-bottom">>ARTÍCULOS</h1>
+
+	<body>
+                
+                <a href="" class="no-a-decor">
+
+					{% block newsblog_content %}
+					    {% for article in article_list %}
+					        {% include "aldryn_newsblog/includes/article.html" %}
+					    {% empty %}
+					        <p >{% trans "No items available" %}</p>
+					    {% endfor %}
+
+					    {% include "aldryn_newsblog/includes/pagination.html" %}
+					{% endblock %}
+				</a>
+
+          <script src="{% static 'aos-master/dist/aos.js' %}"></script>
+	</body>
+
+</html>

@@ -1,0 +1,11 @@
+{% load i18n staticfiles thumbnail apphooks_config_tags %}
+
+{% if author %}
+  <span class="meta post-meta">
+    Posted by
+    <a href="{% namespace_url 'article-list-by-author' author.slug namespace=namespace default='' %}">
+        {{ author.name }}
+    </a>
+    on {{ article.publishing_date|date:"F d, Y" }}
+  </span>
+{% endif %}
