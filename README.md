@@ -12,6 +12,7 @@ Una vez instalado todo, vamos a crear un entorno virtual en nuestra carpeta de t
 
 Instalar en la virtenv, dentro de la carpeta que tenga el archivo requirements.txt:
 	(my-env) $ pip install djangocms-installer
+	(my-env) $ pip install aldryn-newsblog
 	(my-env) $ pip install -r requirements.txt
 
 #Ejecutar
