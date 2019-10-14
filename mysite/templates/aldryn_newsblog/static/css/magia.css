@@ -1,0 +1,699 @@
+:root{
+    --nav-background-color: rgb(70, 255, 23);
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* -----------------NAVEGACIONLPM----------- */
+/***********************
+En GitHub Pages: https://alebarbaja.github.io/volver-a-empezar/
+************************/
+
+.hamburger {
+    text-decoration: none;
+    color: white;
+  }
+
+.iedes-logo{
+  margin-left: 4rem;
+}
+header {
+    position: fixed;
+    right: 0;
+    margin:2rem;
+    z-index: 99999999;
+    display:flex;
+    justify-content: space-between;
+    width: 100%;
+  }  
+  
+ul i {
+    padding: 0;
+    margin-right: 0.3em;
+    padding-right: 0;
+
+  }
+  
+li {
+    list-style-type: none;
+    padding: 1em 0;
+  }
+
+li a{
+    text-decoration: none;
+    color: #04284a;
+    font-size: 2rem;
+    line-height: 4rem;
+}
+  
+i {
+    padding: 1em;
+  }
+  
+.fa-bars {
+    transition: all .2s;
+  }
+  
+.fa-bars:hover {
+    color: white;
+  }
+  
+.nav {
+    font-family: 'Roboto', sans-serif;
+    background-color: #ff294c;
+    padding-top: 4rem;
+    position: fixed;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: -3px 0 10px rgba(0, 0, 0, 0.2);
+    z-index:10000000000000;
+  }
+  
+.nav:not(:target) {
+    right: -100%;
+    transition: right 1.5s;
+  }
+  
+.nav:target {
+    right: 0;
+    transition: right 1s;
+  }
+  
+#close-nav:not(:target) {
+    right: -100%;
+    transition: right 1.5s;
+  }
+  
+#close-nav:target {
+    right: 0;
+    transition: all 1s;
+  }
+  
+#close-nav:not(:target) {
+    right: 0;
+    transform: rotate(360deg);
+  }
+  
+.nav a {
+    border-bottom: 2px solid transparent;
+    transition: all .2s ease-in-out;
+  }
+  
+.nav a:not(.close):hover {
+    border-bottom: 2px solid;
+  }
+  
+.fa-heart {
+    font-size: 1.5em;
+    transition: all .1s ease-in-out;
+  }
+  
+.fa-heart:hover {
+    color: #ee6a6a;
+    animation: pulse 1s infinite;
+  }
+  
+.fa-times{
+      font-size:3rem;
+      color: #04284a
+  }
+  /* KEYFRAMES */
+  
+@keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    25% {
+      transform: scale(1.3);
+    }
+    50% {
+      transform: scale(1);
+    }
+    75% {
+      transform: scale(1.3);
+    }
+    100% {
+      transform: scale(1);
+    }
+}
+
+
+.text-align-rigth{
+    text-align: right;
+}
+.img-iedes{
+    height: 100%;
+    width: 2rem;
+}
+/* ------------------------------------------ */
+/* NAVBAR LA PUTA QUE TE PARIO */
+/* ------------------------------------------ */
+
+
+.is-full-size{
+    height: 100vh;
+    width: 100vw;
+}
+
+.no-a-decor{
+  text-decoration: none;
+  color:inherit;
+}
+
+.background-full-screen{
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: inherit;
+}
+
+/* -------------------------------
+ARTICULO DESTACADO PAPA
+------------------------------- */
+.heteronormatividad{
+    background-image: url(../resources/heteronormatividad-article.svg);
+    width: 100%;
+    height: auto;
+}
+
+.articulo-destacado{
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 1rem;
+    color: white;
+    font-weight: bold;
+    line-height: 4rem;
+    align-items: flex-end;
+    padding-top: 5%;
+    font-size: 5rem;
+    line-height: 6rem;
+    flex-direction: column;
+    padding-top: 10vw;
+    padding-right: 4vw;
+}
+
+.articulo-destacado a{
+    text-decoration: none;
+}
+.articulo-destacado-titulo{
+    text-align: right;
+    font-size: 5vw;
+    color: #ffe600;
+
+    font-family: 'PT Mono', monospace;
+}
+
+
+/* ----------------------------
+HISTORIASSSSS
+-------------------------------- */
+.historias-section{
+    /* background-image: url(/resources/historias-background.svg); */
+    display:flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #c3b1b1ff;
+}
+
+.home-title{
+    font-family: 'Merriweather', serif;
+    font-weight: bold;
+}
+
+.historias-title{
+    margin-left: 2vw;
+    font-size: 7vw;
+    background-color: #fb6754;
+    color: #4745d1;
+    z-index: 2;
+    padding-right: 10vw;
+    padding-left: 10vw;
+
+}
+
+.historia-img{
+    width: 70vw;
+    height: 90%;
+    /* margin-right: 20vw; */
+    /* background-image: url(../resources/historias-img.svg); */
+    position: absolute;
+    /* left: 25vw; */
+    /* z-index: 1; */
+    margin-left: 25vw;
+}
+
+.historias-title:hover{
+  -webkit-animation: shadow-pop-bl 0.3s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+  animation: shadow-pop-bl 0.3s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+}
+
+@-webkit-keyframes shadow-pop-bl {
+  0% {
+    -webkit-box-shadow: 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e;
+            box-shadow: 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e;
+    -webkit-transform: translateX(0) translateY(0);
+            transform: translateX(0) translateY(0);
+  }
+  100% {
+    -webkit-box-shadow: -1px 1px #3e3e3e, -2px 2px #3e3e3e, -3px 3px #3e3e3e, -4px 4px #3e3e3e, -5px 5px #3e3e3e, -6px 6px #3e3e3e, -7px 7px #3e3e3e, -8px 8px #3e3e3e;
+            box-shadow: -1px 1px #3e3e3e, -2px 2px #3e3e3e, -3px 3px #3e3e3e, -4px 4px #3e3e3e, -5px 5px #3e3e3e, -6px 6px #3e3e3e, -7px 7px #3e3e3e, -8px 8px #3e3e3e;
+    -webkit-transform: translateX(8px) translateY(-8px);
+            transform: translateX(8px) translateY(-8px);
+  }
+}
+@keyframes shadow-pop-bl {
+  0% {
+    -webkit-box-shadow: 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e;
+            box-shadow: 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e;
+    -webkit-transform: translateX(0) translateY(0);
+            transform: translateX(0) translateY(0);
+  }
+  100% {
+    -webkit-box-shadow: -1px 1px #3e3e3e, -2px 2px #3e3e3e, -3px 3px #3e3e3e, -4px 4px #3e3e3e, -5px 5px #3e3e3e, -6px 6px #3e3e3e, -7px 7px #3e3e3e, -8px 8px #3e3e3e;
+            box-shadow: -1px 1px #3e3e3e, -2px 2px #3e3e3e, -3px 3px #3e3e3e, -4px 4px #3e3e3e, -5px 5px #3e3e3e, -6px 6px #3e3e3e, -7px 7px #3e3e3e, -8px 8px #3e3e3e;
+    -webkit-transform: translateX(8px) translateY(-8px);
+            transform: translateX(8px) translateY(-8px);
+  }
+}
+
+/* -----------------------------------
+DIVERSIDADDDDDDDDDDDDDDDDDDDDDDDDDDDDD
+----------------- */
+
+.diversidad-section{
+    background-color: #e09fb4ff;
+    display:flex;
+    align-items: center;
+    justify-content: flex-end;
+    
+}
+
+.diversidad-img{
+    /* background-image: url(../resources/VICTOR-HUGO-ROBLES.jpg); */
+    float: left;
+    width: 60vw;
+    height: auto;
+    align-self: center;
+    /* margin-right: -15vw;
+    margin-left: 8vw;
+    margin-top: 15vh; */
+    position: absolute;
+    order: -1;
+    margin-right: 70vh;
+}
+
+.diversidad-title{
+    background-color: black;
+    color: antiquewhite;
+    z-index: 2;
+    font-size: 7vw;
+    /* right: 40rem; */
+    /* margin-right: 25vw; */
+    position: absolute;
+    padding-left: 15vw;
+    padding-right: 10vw;
+}
+
+.diversidad-title:hover{
+  /* background: linear-gradient(to left, #f00000, #f00000 16.67%, #ff8000 16.67%, #ff8000 33.33%, #ffff00 33.33%, #ffff00 50%, #007940 50%, #007940 66.67%, #4040ff 66.67%, #4040ff 83.33%, #a000c0 83.33%, #a000c0); */
+  background: linear-gradient(to left, #d04b36, #d04b36 16.67%, #e36511 16.67%, #e36511 33.33%, #ffba00 33.33%, #ffff00 50%, #00b180 50%, #00b180 66.67%, #147aab 66.67%, #147aab 83.33%, #675997 83.33%, #675997);
+
+  /* background: linear-gradient( to left, #FF0018, #FFA52C, #FFFF41, #008018, #0000F9, #86007D); */
+  background-size: 300% 300%;
+  animation: animateDiversidad 4s linear infinite;
+}
+
+@keyframes animateDiversidad {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 300% 50%;
+  }
+}
+/* ---------------------------------------- */
+
+.feminismos-section{
+    background-color: #ff8080ff;
+    display:flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.fem-img{
+    width: 45vw;
+    height: auto;
+    float: left;
+    position: absolute;
+    margin-left: 40vw;
+    order: 2;
+}
+
+.fem-title{
+    background-color:  #04284a;
+    color: #ff294c;
+}
+
+/* .fem-title:hover{
+    border: 10px solid #ff294c;
+    -webkit-transition: border ease .9s .6s;
+    transition: border ease .9s .6s;
+} */
+
+/* ------------------------------------------------ */
+.ultimos-articulos{
+    background-color: #04284a;
+    
+}
+
+.title-ultimos-articulos{
+    font-size: 16vw;
+    text-align: center;
+    padding-top: 5rem;
+    color:#ffe600;
+    /* position: absolute; */
+}
+
+
+.container-ultimos-articulos{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 1rem;
+    z-index: 2;
+    margin-top: -20vh;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color:rgb(233, 202, 202);
+    text-align: center;
+    line-height: 2rem;
+}
+
+.card1{
+    background-color: crimson;
+}
+
+.card2{
+    background-color: crimson;
+}
+
+.card3{
+    background-color: crimson;
+}
+
+
+/* -------ELFOOTER------------ */
+.footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: lawngreen;
+    height: 50vh;
+    font-size: 1.5rem;
+    width: 100vw;
+
+}
+
+
+/* --------------ESTILOS ARTICULOS-------------------
+ */
+.article{
+    background-color: rgba(202, 195, 195, 0.829);
+    width: 100vw;
+}
+
+.title-article{
+    text-align: center;
+    padding-top: 7rem;
+    font-family: 'Merriweather', serif;
+    font-weight: bold;
+    font-size:4rem;
+    /* background-color: #04284a; */
+    color: #fb6754;
+    word-break: break-word;
+}
+.container-grid-article{
+    display: grid;
+    grid-template-columns: 2fr 10fr 1fr;
+    padding: 5rem 10rem;
+    grid-gap: 10px 50px;
+}
+
+.column1{
+    font-size: 2rem;
+    line-height: 3rem;
+
+}
+
+.column2{
+    line-height: 4rem;
+    font-size: 1.5rem;
+}
+
+.break{
+    display: block;
+}
+
+.parrafo{
+    padding-bottom: 3rem;
+    padding-top: 3rem;
+}
+
+.first-letter::first-letter{
+    font-size:6rem;
+    float: left;
+    margin-top: 1.75rem; 
+    margin-right: 1rem;
+}
+
+
+/* -------------------CATEGORIASSSS------------- */
+
+.title-category{
+    font-size: 10vw;
+    text-align: center;
+    padding: 3rem;
+}
+
+.container-category{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1rem;
+    margin: auto 10vw;
+}
+
+.article-category{
+    padding: 2rem;
+    /* border-style:  double none; */
+    line-height: 5vw;
+    border-bottom: #675997 double medium;
+}
+
+
+.category-article-title{
+    font-size: 3vw;
+}
+
+.category-article-subtitle{
+    font-size: 1.5vw;
+}
+
+.category-article-title:hover,
+.category-article-subtitle:hover{
+    background-color: #fb6754;
+    color: #04284a;
+    transition: 0.5s;
+}
+
+/* ----------------------------
+-------ANIMACIONES----------
+---------------------------- */
+/* ----------------------------------------------
+ * Generated by Animista on 2019-10-11 20:41:14
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation slide-in-right
+ * ----------------------------------------
+ */
+ .text-shadow-pop-top {
+	-webkit-animation: text-shadow-pop-top 0.6s both;
+	        animation: text-shadow-pop-top 0.6s both;
+}
+
+ @-webkit-keyframes text-shadow-pop-top {
+    0% {
+      text-shadow: 0 0 #555555, 0 0 #555555, 0 0 #555555, 0 0 #555555, 0 0 #555555, 0 0 #555555, 0 0 #555555, 0 0 #555555;
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+    }
+    100% {
+      text-shadow: 0 -1px #555555, 0 -2px #555555, 0 -3px #555555, 0 -4px #555555, 0 -5px #555555, 0 -6px #555555, 0 -7px #555555, 0 -8px #555555;
+      -webkit-transform: translateY(8px);
+              transform: translateY(8px);
+    }
+  }
+  @keyframes text-shadow-pop-top {
+    0% {
+      text-shadow: 0 0 #555555, 0 0 #555555, 0 0 #555555, 0 0 #555555, 0 0 #555555, 0 0 #555555, 0 0 #555555, 0 0 #555555;
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+    }
+    100% {
+      text-shadow: 0 -1px #555555, 0 -2px #555555, 0 -3px #555555, 0 -4px #555555, 0 -5px #555555, 0 -6px #555555, 0 -7px #555555, 0 -8px #555555;
+      -webkit-transform: translateY(8px);
+              transform: translateY(8px);
+    }
+  }
+
+
+
+
+
+.text-shadow-pop-left {
+	-webkit-animation: text-shadow-pop-left 0.6s both;
+	        animation: text-shadow-pop-left 0.6s both;
+}
+
+@-webkit-keyframes text-shadow-pop-left {
+    0% {
+      text-shadow: 0 0 #555555, 0 0 #555555, 0 0 #555555, 0 0 #555555, 0 0 #555555, 0 0 #555555, 0 0 #555555, 0 0 #555555;
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+    }
+    100% {
+      text-shadow: -1px 0 #555555, -2px 0 #555555, -3px 0 #555555, -4px 0 #555555, -5px 0 #555555, -6px 0 #555555, -7px 0 #555555, -8px 0 #555555;
+      -webkit-transform: translateX(8px);
+              transform: translateX(8px);
+    }
+  }
+@keyframes text-shadow-pop-left {
+    0% {
+      text-shadow: 0 0 #555555, 0 0 #555555, 0 0 #555555, 0 0 #555555, 0 0 #555555, 0 0 #555555, 0 0 #555555, 0 0 #555555;
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+    }
+    100% {
+      text-shadow: -1px 0 #555555, -2px 0 #555555, -3px 0 #555555, -4px 0 #555555, -5px 0 #555555, -6px 0 #555555, -7px 0 #555555, -8px 0 #555555;
+      -webkit-transform: translateX(8px);
+              transform: translateX(8px);
+    }
+  }
+  
+.text-pop-up-bottom {
+	-webkit-animation: text-pop-up-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: text-pop-up-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+
+@-webkit-keyframes text-pop-up-bottom {
+    0% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+      -webkit-transform-origin: 50% 50%;
+              transform-origin: 50% 50%;
+      text-shadow: none;
+    }
+    100% {
+      -webkit-transform: translateY(50px);
+              transform: translateY(50px);
+      -webkit-transform-origin: 50% 50%;
+              transform-origin: 50% 50%;
+      text-shadow: 0 1px 0 #cccccc, 0 2px 0 #cccccc, 0 3px 0 #cccccc, 0 4px 0 #cccccc, 0 5px 0 #cccccc, 0 6px 0 #cccccc, 0 7px 0 #cccccc, 0 8px 0 #cccccc, 0 9px 0 #cccccc, 0 50px 30px rgba(0, 0, 0, 0.3);
+    }
+  }
+@keyframes text-pop-up-bottom {
+    0% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+      -webkit-transform-origin: 50% 50%;
+              transform-origin: 50% 50%;
+      text-shadow: none;
+    }
+    100% {
+      -webkit-transform: translateY(50px);
+              transform: translateY(50px);
+      -webkit-transform-origin: 50% 50%;
+              transform-origin: 50% 50%;
+      text-shadow: 0 1px 0 #cccccc, 0 2px 0 #cccccc, 0 3px 0 #cccccc, 0 4px 0 #cccccc, 0 5px 0 #cccccc, 0 6px 0 #cccccc, 0 7px 0 #cccccc, 0 8px 0 #cccccc, 0 9px 0 #cccccc, 0 50px 30px rgba(0, 0, 0, 0.3);
+    }
+  }
+  
+
+@media screen and (max-width: 800px){
+
+    .articulo-destacado-titulo{
+        font-size: 8vw;
+    }
+    
+    .historia-img,
+    .fem-img,
+    .diversidad-img{
+        display: none;
+    }
+
+    .historias-section{
+        background-image: url(../resources/historias-ventana.svg);
+        padding: 0;
+    }
+
+    .feminismos-section{
+        background-image: url(../resources/mujeres-indolentes.svg)
+    }
+    
+    .diversidad-section{
+        background-image: url(../resources/VICTOR-HUGO-ROBLES.jpg)
+
+    }
+
+    .historias-title,
+    .diversidad-title,
+    .fem-title{
+        font-size:10vw;
+        align-self: center;
+    }
+        
+    .container-ultimos-articulos{
+        grid-template-columns: 1fr;
+        margin-top: 0;
+    }
+    
+    .ultimos-articulos{
+        height: 100%;
+        padding: 7vh 0vw;
+    }
+    .title-ultimos-articulos{
+        padding-top: 0;
+    }
+
+    .container-grid-article{
+        grid-template-columns: 1fr;
+        padding: 2rem;
+    }
+
+    .container-grid-article .column2{
+        font-size: 1.15rem;
+    }
+
+    .container-grid-article .column1{
+        font-size: 1.25rem;
+    }
+
+    .title-article{
+        font-size: 2.5rem;
+        padding: 2rem 1rem;
+    }
+}

@@ -210,7 +210,9 @@ ARTICULO DESTACADO PAPA
     font-family: 'PT Mono', monospace;
 }
 
-
+ul .categories{
+  background-color:red;
+}
 /* ----------------------------
 HISTORIASSSSS
 -------------------------------- */
@@ -520,6 +522,10 @@ DIVERSIDADDDDDDDDDDDDDDDDDDDDDDDDDDDDD
 
 .to-uppercase{
     text-transform: uppercase;
+}
+
+.categories{
+  color:red;
 }
 /* ----------------------------
 -------ANIMACIONES----------
