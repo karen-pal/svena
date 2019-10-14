@@ -1,5 +1,6 @@
 {% load i18n staticfiles thumbnail apphooks_config_tags %}
 
+<!--show authors-->
 {% if author %}
   <span class="meta post-meta">
     Posted by
@@ -8,4 +9,14 @@
     </a>
     on {{ article.publishing_date|date:"F d, Y" }}
   </span>
+{% endif %}
+
+<!--show categories-->
+{% if article.categories.exists %}
+<ul style="margin-left: 0">
+    {% for category in article.categories.all %}
+        <li class="categories"><a href="{% namespace_url 'article-list-by-category' category.slug namespace=instance.app_config.namespace default='' %}">{{ category.name }}</a></li>
+        {% if not forloop.last %}<span class="separator categories-separator">|</span> {% endif %}
+    {% endfor %}
+</ul>
 {% endif %}
