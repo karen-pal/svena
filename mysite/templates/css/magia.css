@@ -421,7 +421,9 @@ DIVERSIDADDDDDDDDDDDDDDDDDDDDDDDDDDDDD
     height: 50vh;
     font-size: 1.5rem;
     width: 100vw;
-
+    flex-direction: column;
+    padding: 2rem;
+    font-family: 'Roboto Mono', monospace;
 }
 
 

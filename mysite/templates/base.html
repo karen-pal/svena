@@ -6,7 +6,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>GENEROS</title>
-
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet"> 
         <link href="{% static 'css/magia.css' %}" rel="stylesheet" type="text/css">
         <link  href="{% static 'aos-master/dist/aos.css' %}" rel="stylesheet">
         
@@ -76,25 +76,36 @@
         <section class="ultimos-articulos is-full-size background-full-screen">
             <h1 class="title-ultimos-articulos home-title">ÚLTIMOS ARTÍCULOS</h1>
             <div class="container-ultimos-articulos">
-                <div class="card1">
-                    <h2>QUE ES ESTO</h2>
-                    <p>UN PEDAZO DE TEXTO</p>
-                </div>
-                <div class="card2">
-                    <h2>Y ESTO OTRO</h2>
-                    <p>UN SUBTITULO FALOPA</p>
-                </div>
-                <div class="card3">
-                    <h2>ESTOY EN LA INTERNET</h2>
-                    <p>PERO QUE MODERNO!</p>
-                </div>
+                <a href="http://localhost:8000/en/article/brecha-y-desigualdad-de-las-mujeres-en-la-tecnologia/" class="no-a-decor"><div class="card1">
+                        <h2>Brecha y desigualdad de las mujeres en la tecnología</h2>
+                        <p><b>En el campo de la tecnología, dominado desde los 80's por el género masculino, los datos muestran ciertas alertas.</b></p>
+                    </div>
+                </a>
+
+                <a href="http://localhost:8000/en/article/mary-wigman/" class="no-a-decor">
+                    <div class="card2">
+                            <h2>Mary Wigman</h2>
+                            <br><br>
+                            <p><b>Mary Wigman fue una pionera en su campo, revolucionando la idea de la mujer artista.</b></p>
+                        </div>
+                </a>
+                <a href="http://localhost:8000/en/article/inconformidad/" class="no-a-decor">
+                    <div class="card3">
+                            <h2>InConformidad</h2>
+                            <br>
+                            <p><b>Aceptar lo que es esperado de nosotrxs o tomarlo como materia prima para crear algo nuevo?</b></p>
+                        </div>
+                </a>
+                
                 
             </div>
         </section>
 
         <div>
-            <footer class="footer">
-                <p>Yo y la monada</p>
+            <footer class="footer" style="padding: 2rem;flex-direction: column; font-family: 'Roboto Mono', monospace;">
+                <p>Svéna (sánscrito: स्वेन) significa - 'por tu cuenta' o 'por la propia naturaleza condicionada'.
+                        En la filosofía hindú, Svéna se refiere a la realización de la propia naturaleza verdadera que es diferente de la noción de que el cuerpo es el propio Ser.</p>
+                        <a class="no-a-decor" href="https://github.com/karen-pal/svena" style="padding: 2rem;"><i class="fab fa-github"></i>Svena</a>
             </footer>
         </div>
     <script src="{% static 'aos-master/dist/aos.js' %}"></script>
